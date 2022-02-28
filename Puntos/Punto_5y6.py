@@ -14,6 +14,4 @@ if __name__ == '__main__':
     solucion = punto_5()
     numero = len(solucion)
     print(f"El numero mas pequeño es: {solucion[numero-2]}")
-
-# Si epsilon satisface la condicion: (epsilon < x) para todos los numeros x que la maquina soporta, entonces
-# (1/x < 1/epsilon) para todos los reales x que la maquina soporta.
+    print(f"El numero mas grande es: {1/solucion[numero-53]}, tomando el numero {solucion[numero-53]}")

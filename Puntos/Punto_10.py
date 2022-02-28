@@ -1,4 +1,3 @@
-print("*****Programa para convertir a sistemas numericos*****\n")
 
 
 def decimal_a_binario(numero, base):
@@ -16,10 +15,10 @@ def decimal_a_binario(numero, base):
         binario_entero = "-" + binario_entero
 
     if parte_decimal != 0:
-        while abs(parte_decimal) - abs(int(parte_decimal)) > 0:
-            residuo = int(parte_decimal * base)
-            parte_decimal = parte_decimal * base
-            binario_decimal = str(residuo) + binario_decimal
+        while parte_decimal > 0:
+            residuo = parte_decimal * base
+            binario_decimal = str(int(residuo)) + binario_decimal
+            parte_decimal = abs(residuo) - abs(int(residuo))
         return binario_entero + "," + binario_decimal
     else:
         return binario_entero
