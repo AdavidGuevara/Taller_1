@@ -1,6 +1,7 @@
+import time
 
 
-def encontrar_primo(numero):
+def encontrar_primo_1(numero):
     contador_multiplo = 0
     for i in range(2, int(numero/2) + 1):
         if numero % i == 0:
@@ -12,11 +13,11 @@ def encontrar_primo(numero):
         return False
 
 
-def primo(rango):
+def primo_1(rango):
     primos = []
     contador = 0
     for i in range(2, rango):
-        if not encontrar_primo(i):
+        if not encontrar_primo_1(i):
             primos.append(i)
             contador += 1
     return primos, contador
@@ -28,6 +29,10 @@ if __name__ == '__main__':
     except (ValueError, SyntaxError):
         print("Error: El numero ingresado deve ser entero positivo")
     else:
-        vector, total = primo(maximo)
-        print(vector)
-        print(total)
+
+        inicio_1 = time.time()
+        vector_1, total_1 = primo_1(maximo)
+        print(vector_1)
+        print(total_1)
+        fin_1 = time.time()
+        print(f"Tiempo de ejecucion al dividir numero a la mitad: {fin_1-inicio_1}")
